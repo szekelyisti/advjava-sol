@@ -1,0 +1,30 @@
+server:
+  port : 8080
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+endpoint:
+  loggers:
+    enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false
+    driver-class-name: org.h2.Driver
+    data-username: sa
+    data-password: ""
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
